@@ -135,7 +135,7 @@ export default function Post({ post }: Props) {
         </form>
       )}
 
-      <div className="flex flex-col p-10 my-10 mx-w-2xl mx-auto shadow-yellow-500 shadow space-y-2">
+      <div className="flex flex-col p-10 m-10 max-w-2xl mx-auto shadow-yellow-500 shadow space-y-2">
         <h3 className="text-4xl">Comments</h3>
         <hr className="pb-2" />
 
