@@ -22,7 +22,7 @@ export default function Post({ post }: Props) {
   
   const { register, handleSubmit, watch, formState: { errors } } = useForm<IFormInput>();
   
-  
+
   const onSubmit: SubmitHandler<IFormInput> = async(data) => {
     await fetch('/api/createComment',{
       method: 'POST',
@@ -55,7 +55,7 @@ export default function Post({ post }: Props) {
             src={urlFor(post.author.image).url()} 
             alt="" 
           />
-          <p className="font-extralight text-sm">Blog post by <span className="text-green-600">{post.author.name}</span> - Published at {" "}{new Date(post._createdAt).toLocaleString()}</p>
+          <p className="font-extralight text-sm">Blog post by <span className="text-green-600">{post.author.name}</span> - Published at {" "}{new Intl.DateTimeFormat('en-US', {day: 'numeric', year: 'numeric', month: 'long'}).format(post._createdAt)}</p>
         </div>
 
         <div className="mt-10">
